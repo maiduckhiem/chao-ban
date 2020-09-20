@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="mot" style="display: none;">dat hang</h2>
+    <div>
+        <h4>so huong</h4>
+        <input id="one" type="text">
+        <div id="error1"></div>
+    </div>
+    <div>
+        <h4>san pham</h4>
+        <input id="two" type="text">
+        <div id="error2"></div>
+    </div>
+    <div>
+        <h4>loai</h4>
+        <select name="" id="">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
+    </div>
+    <button id="submit">click</button>
+    <script>
+        function kiemtra() {
+            var one = document.querySelector('#one')
+            var two = document.querySelector('#two')
+            var error = document.querySelector('#error1')
+            var error1 = document.querySelector('#error2')
+           
+            if (one.value.length == 0) {
+                one.style.border = '1px solid red'
+                error.innerHTML = 'moi ban nhap'
+                return false;
+            } else {
+                one.style.border = 'none'
+                error.innerHTML = '';
+            }
+            if (two.value.length == 0) {
+                two.style.border = '1px solid red'
+                error1.innerHTML = 'moi ban nhap'
+                return false;
+            } else {
+                one.style.border = 'none'
+                error.innerHTML = '';
+            }
+        }
+    var submit = document.querySelector('#submit')
+    submit.addEventListener('click',kiemtra);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bai1.css">
+</head>
+
+<body>
+    <table>
+        <h4>họ và tên :</h4>
+        <div>
+            <input id="one" type="text">
+        </div>
+        <h4>vị trí làm việc:</h4>
+        <div>
+            <input id="two" type="text">
+        </div>
+        <h4>giới tính :</h4>
+
+        <div >
+            <input onclick="myone()" type="radio" name="gioitinh"><span>nam</span>
+            <input onclick="mytwo()" type="radio" name="gioitinh"><span>nu</span>
+        </div>
+        <h4>mức lương</h4>
+        <div>
+            <input id="luong" type="text">
+        </div>
+
+        <button id="submit" type="submit" onclick="myfunction()">lưu</button>
+    </table>
+    <div id="bang">
+        <h4>họ tên:</h4>
+        <span id="hoten"></span>
+        <h4>vị trí việc làm:</h4>
+        <span id="viec"></span>
+        <h4>giới tính:</h4>
+        <span id="gioitinh"></span>
+        <h4>mức lương:</h4>
+        <span id="money"></span>
+    </div>
+    <script>
+        var quanhe=document.querySelector('#quanhe')
+        var luong = document.querySelector('#luong')
+        var one = document.querySelector('#one')
+        var two = document.querySelector('#two')
+        var five = document.querySelector('#submit')
+        var gioitinh = document.getElementsByName('gioitinh')
+        function validate() {
+            if (one.value.length > 8) {
+                alert('bạn nhập quá ký tự')
+            } else if (one.value == '') {
+                alert('mời bạn nhập họ tên')
+            } else if (two.value == '') {
+                alert('mời bạn nhập vị trí làm việc')
+            } else if (isNaN(luong.value)) {
+                alert('đây không phải là số')
+            } else if (luong.value == '') {
+                alert('mời bạn nhập')
+            } else if (luong.value <= -0) {
+                alert('đây không phải là số dương')
+            } else if (gioitinh[0].checked !== true & gioitinh[1].checked !== true) {
+                alert('mời bạn chọn giới tính')
+            } else {
+                alert('đang nhập thanh công')
+                var hoten = document.getElementById('hoten')
+                var viec = document.getElementById('viec')
+                var gioitinh1 = document.getElementById('gioitinh')
+                var money = document.getElementById('money')
+
+                hoten.innerHTML = one.value;
+                viec.innerHTML = two.value;
+                money.innerHTML = luong.value;
+            }
+        }
+        function myone(){
+            document.getElementById('#gioitinh').innerHTML='nam';
+        }
+        five.addEventListener('click', validate);
+        var bang=document.querySelector('#bang')
+        five.addEventListener("click",function(){
+            if (five.checked==true){
+                bang.style.display='none';
+            }else{
+                bang.style.display='block';
+            }
+        })
+    </script>
+</body>
+
+</html>

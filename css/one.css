@@ -1,0 +1,16 @@
+body{
+	text-align: center;
+}
+#anh{
+	position: relative;
+}
+#prev{
+	position: absolute;
+	top: 530px;
+	right: 885px;
+}
+#next{
+	position: absolute;
+	top: 530px;
+	right: 600px;
+}
